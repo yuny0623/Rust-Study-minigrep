@@ -19,7 +19,7 @@ impl Config {
     }
 }
 
-// 에러 때문에 Box<Error> 가 아니라 Box<dyn Error> 로 반환해야함. 
+// trait 에러 때문에 Box<Error> 가 아니라 Box<dyn Error> 로 반환해야함. 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>>{
     let mut f = File::open(config.filename)?;
 
